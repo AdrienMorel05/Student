@@ -44,7 +44,7 @@ public class MainLancement {
 	private JTextField InfoDate;
 	private JTextField InfoNom;
 	private JTextField InfoPrénom;
-	private JLabel date;
+	private JLabel date; 
 	private JLabel nom;
 	private JLabel prénom;
 	private JLabel id;
@@ -213,7 +213,19 @@ public class MainLancement {
 				String prénomRec = InfoPrénom.getText();
 				String dateRec = InfoDate.getText();
 				List<String> etudiant = new ArrayList<>();
-				
+				if (nomRec.isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Enregistrement impossible, merci d'entrer un Nom");
+				InfoNom.setBorder(new LineBorder(Color.red,1));
+				return;
+				}
+				else if (prénomRec.isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Enregistrement impossible, merci d'entrer un prénom");
+				return;
+				}
+				else if (dateRec.isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Enregistrement impossible, merci d'entrer une date de naissance");
+				return;}
+				else 
 				etudiant.add(nomRec);
 				etudiant.add(prénomRec);
 				etudiant.add(dateRec);
