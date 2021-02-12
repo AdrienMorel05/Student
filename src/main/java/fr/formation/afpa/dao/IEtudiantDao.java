@@ -8,8 +8,9 @@ public interface IEtudiantDao {
 	
 	public List<Etudiant> getAll();
 	
-	public void add(Etudiant e);
+	public String add(Etudiant e);
 	
-	public Etudiant update(Etudiant e);
+	public void update(Etudiant e);
 
+	public Etudiant getEtudiantByid(long idEtudiant);
 }
